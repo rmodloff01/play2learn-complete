@@ -2,17 +2,17 @@
 
 {% block title %}Game Scores{% endblock %}
 {% block main %}
-  <h1>Game Scores</h1>
+  <h1>Game Scores - {{ user.username }} </h1>
   <h2>Anagram Hunt</h2>
   <ol>
     {% for score in anagram_scores %}
-        <li>{{score.score}}: ({{score.user_name}} - {{score.created}})</li>
+        <li>SCORE: {{score.score}} <br> DATE: {{score.created}}</li>
     {% endfor %}
   </ol>
   <h2>Math Facts</h2>
   <ol>
     {% for score in math_scores %}
-        <li>{{score.score}}: ({{score.user_name}} - {{score.created}})</li>
+        <li>SCORE: {{score.score}} <br> DATE: {{score.created}}</li>
     {% endfor %}
   </ol>
 {% endblock %}

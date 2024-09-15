@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block title %}Leaderboard{% endblock %}
+{% block main %}
+  <h1>Leaderboard</h1>
+  <h2>Anagram Hunt</h2>
+  <ol>
+    {% for score in anagram_scores %}
+    <li>SCORE: {{score.score}} <br> USERNAME: {{score.user_name}} <br/> DATE: {{score.created}}</li>
+    {% endfor %}
+  </ol>
+  <h2>Math Facts</h2>
+  <ol>
+    {% for score in math_scores %}
+        <li>SCORE: {{score.score}} <br> USERNAME: {{score.user_name}} <br/> DATE: {{score.created}}</li>
+    {% endfor %}
+  </ol>
+{% endblock %}

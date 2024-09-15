@@ -18,6 +18,15 @@ class GameScoresView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(GameScoresView, self).get_context_data(**kwargs)
+        context['anagram_scores'] = GameScore.objects.filter(game__exact='ANAGRAM', user_name=self.request.user).order_by('-score')
+        context['math_scores'] = GameScore.objects.filter(game__exact='MATH', user_name=self.request.user).order_by('-score')
+        return context
+    
+class LeaderboardView(TemplateView):
+    template_name = "leaderboard.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(LeaderboardView, self).get_context_data(**kwargs)
         context['anagram_scores'] = GameScore.objects.filter(game__exact='ANAGRAM').order_by('-score')
         context['math_scores'] = GameScore.objects.filter(game__exact='MATH').order_by('-score')
         return context

@@ -128,7 +128,7 @@ export default {
     },
     async recordScore() {
       const data = {
-        "user-name": this.UserName,
+        "user-name": "rmodloff",
         "score": this.score,
         "game": "ANAGRAM"
       };
