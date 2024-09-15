@@ -49,11 +49,12 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     # local apps
+    'common.apps.CommonConfig',
     "games.apps.GamesConfig",
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
-    'common.apps.CommonConfig',
     'contact.apps.ContactConfig',
+    'reviews.apps.ReviewsConfig',
 ]
 
 SITE_ID = 1
