@@ -2,9 +2,11 @@
 
 {% block title %}Reviews{% endblock %}
 {% block main %}
+  {% if user.is_authenticated %}
   <a class="btn btn-success btn-sm float-end" href="{% url 'reviews:create' %}">
     + New Review
   </a>
+  {% endif %}
   <h2>Reviews</h2>
   <ul class="list-group list-group-flush mb-3">
     {% for review in review_list %}

@@ -159,8 +159,15 @@ export default {
       }
     },
     async recordScore() {
-      // TODO: when Math Facts finishes, make an Ajax call with axios (this.axios)
-      // to record the score on the backend
+      const data = {
+        "user-name": "rmodloff",
+        "score": this.score,
+        "game": "MATH"
+      };
+
+      const response = (await this.axios.post("/record-score/", data)).data;
+
+      console.log(response);
     }
   },
   computed: {
