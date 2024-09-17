@@ -78,7 +78,7 @@ export default {
     return {
       userName: document.getElementById("game_user").value,
       score: 0,
-      timeLeft: 10,
+      timeLeft: 60,
       anagrams: anagrams,
       currentWord: "",
       anagramList: [],
@@ -128,7 +128,7 @@ export default {
     },
     async recordScore() {
       const data = {
-        "user-name": this.userName,
+        "user-name": document.getElementById("game_user").value,
         "score": this.score,
         "game": "ANAGRAM",
         "operation": "",
