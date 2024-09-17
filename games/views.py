@@ -32,13 +32,16 @@ class LeaderboardView(TemplateView):
         return context
 
 def record_score(request):
-    data = json.load(request.body)
+    data = json.loads(request.body)
 
     user_name = data["user-name"]
     game = data["game"]
     score = data["score"]
+    operation = data["operation"]
+    max_number = data["max_number"]
+    word_length = data["word_length"]
 
-    new_score = GameScore(user_name=user_name, game=game, score=score)
+    new_score = GameScore(user_name=user_name, game=game, score=score, operation=operation, max_number=max_number, word_length=word_length)
     new_score.save()
 
     response = {
@@ -46,3 +49,4 @@ def record_score(request):
     }
 
     return JsonResponse(response)
+

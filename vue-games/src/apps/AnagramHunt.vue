@@ -76,7 +76,7 @@ export default {
   name: 'AnagramGame',
   data() {
     return {
-      userName: '',
+      userName: 'joesmith27',
       score: 0,
       timeLeft: 60,
       anagrams: anagrams,
@@ -128,9 +128,12 @@ export default {
     },
     async recordScore() {
       const data = {
-        "user-name": "rmodloff",
+        "user-name": this.userName,
         "score": this.score,
-        "game": "ANAGRAM"
+        "game": "ANAGRAM",
+        "operation": "",
+        "max_number": "",
+        "word_length": this.wordLength
       };
 
       const response = (await this.axios.post("/record-score/", data)).data;

@@ -117,6 +117,7 @@ export default {
   name: 'MathGame',
   data() {
     return {
+      userName: 'rmodloff',
       score: 0,
       screen: "start",
       maxNumber: 30,
@@ -131,7 +132,7 @@ export default {
       number2: 0,
       userInput: "",
       interval: null,
-      timeLeft: 10,
+      timeLeft: 60,
     }
   },
   methods: {
@@ -160,14 +161,19 @@ export default {
     },
     async recordScore() {
       const data = {
-        "user-name": "rmodloff",
+        "user-name": this.userName,
         "score": this.score,
-        "game": "MATH"
+        "game": "MATH",
+        "operation": this.operation,
+        "max_number": this.maxNumber,
+        "word_length": ""
       };
 
       const response = (await this.axios.post("/record-score/", data)).data;
 
       console.log(response);
+
+      console.log("{{ user.username }}");
     }
   },
   computed: {
