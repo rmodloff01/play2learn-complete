@@ -117,7 +117,7 @@ export default {
   name: 'MathGame',
   data() {
     return {
-      userName: 'rmodloff',
+      userName: document.getElementById("game_user").value,
       score: 0,
       screen: "start",
       maxNumber: 30,

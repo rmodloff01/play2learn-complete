@@ -76,9 +76,9 @@ export default {
   name: 'AnagramGame',
   data() {
     return {
-      userName: 'joesmith27',
+      userName: document.getElementById("game_user").value,
       score: 0,
-      timeLeft: 60,
+      timeLeft: 10,
       anagrams: anagrams,
       currentWord: "",
       anagramList: [],

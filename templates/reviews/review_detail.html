@@ -5,7 +5,7 @@
   <div class="card border-primary m-auto mb-3 text-center"
     style="max-width: 30rem">
     <div class="card-header">{{ review.review }}</div>
-    {% if joke.user == user %}
+    {% if review.user == user %}
     <div class="card-footer">
         <a href="{% url 'reviews:update' review.pk %}"
           class="btn btn-info btn-sm me-2">Update</a>
